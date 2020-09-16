@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Photo uploader",
+  "name": "Photo uploader with special effects",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,0 +1,17 @@
+.Canvas {
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+
+
+    img {
+        visibility: hidden;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: 100%;
+        height: auto;
+    }
+}
