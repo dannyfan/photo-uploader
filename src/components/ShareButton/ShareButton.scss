@@ -1,6 +1,29 @@
+@import "../../styles/common/variables";
+
 .ShareButton-container {
 
     &__hidden {
         display: none;
+    }
+
+    div {
+        display: flex;
+    }
+
+    input[type=text] {
+        flex-grow: 1;
+        padding: 0.5em;
+        box-sizing: border-box;
+        font-size: 1em;
+    }
+
+    button {
+        margin-left: 1em;
+        padding: 0 1em;
+        background-color: $alt-green;
+        color: white;
+        font-weight: 700;
+        border: 1px solid $green;
+        cursor: pointer;
     }
 }

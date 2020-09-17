@@ -1,7 +1,58 @@
+@import "../../styles/common/variables";
+
 .FilterList-menu {
     display: flex;
-    justify-content: space-between;
     list-style-type: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    border: 1px solid $alt-purple;
+    box-shadow: 1px 1px 1px 0px #6320EE;
+
+    @media screen and (max-width: $small) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    li {
+        width: 100%;
+        height: 100px;
+        margin: 0 auto;
+
+        label {
+            background-color: $purple;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+        }
+
+        input[type=radio] {
+            display: none;
+
+            &:checked + label {
+                background: linear-gradient($alt-purple 25%, $purple);
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.FilterList-value {
+    margin: 1em auto;    
+    display: flex;
+
+    input[type=range] {
+        width: 100%;
+    }
+
+    span {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1em;
+    }
 }

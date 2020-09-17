@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
+import "./UploadButton.scss";
 
-const UploadButton = (props) => {    
-
+const UploadButton = (props) => {
     const uploadImage = (event) => {
         const reader = new FileReader();
 
@@ -10,11 +10,19 @@ const UploadButton = (props) => {
         };
 
         reader.readAsDataURL(event.target.files[0]);
-    }
+    };
 
     return (
-        <input type="file" className="Upload-Button" onChange={uploadImage}/>
-    )
+        <label className="UploadButton_label">
+            <input
+                accept="image/png, image/jpeg"
+                type="file"
+                className="UploadButton"
+                onChange={uploadImage}
+            />
+            Upload image
+        </label>
+    );
 };
 
 export default UploadButton;

@@ -11,7 +11,7 @@ const Canvas = (props) => {
         canvas.height = imageRef.current.height;
         const ctx = canvas.getContext('2d');
         ctx.filter = `${props.filter}(${props.filterValue})`;
-        ctx.drawImage(imageRef.current, 0, 0);
+        ctx.drawImage(imageRef.current, 0, 0, canvas.width, canvas.height);
         props.setFinalImage(canvas.toDataURL('image/png'));
     }
 

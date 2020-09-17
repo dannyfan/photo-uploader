@@ -45,6 +45,7 @@ const App = () => {
             ) : (
                 <>
                     <UploadButton image={rawImage} setImage={setRawImage} />
+                    <ShareButton link={shareLink} />
                     <FilterList
                         setFilter={setFilter}
                         setFilterValue={setFilterValue}
@@ -55,7 +56,6 @@ const App = () => {
                         filterValue={filterValue}
                         setFinalImage={setFinalImage}
                     />
-                    <ShareButton link={shareLink} />
                 </>
             )}
         </div>

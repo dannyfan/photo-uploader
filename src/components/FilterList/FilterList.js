@@ -26,27 +26,34 @@ const FilterList = (props) => {
 
     return (
         <div className="FilterList">
-            <h2>Select an effect to apply to photo: </h2>
+            <h3>Select an effect:</h3>
             <ul className="FilterList-menu">
                 {filters.map((filter) => {
                     const selected = filter === activeFilter;
                     return (
                         <li key={filter}>
-                            <label>
-                                <input
-                                    type="radio"
-                                    value={filter}
-                                    onChange={changeFilter}
-                                    checked={selected}
-                                />
-                                {filter}
-                            </label>
+                            <input
+                                type="radio"
+                                id={filter}
+                                name={filter}
+                                value={filter}
+                                onChange={changeFilter}
+                                checked={selected}
+                            />
+                            <label for={filter}>{filter}</label>
                         </li>
                     );
                 })}
             </ul>
+            <h3>Increase/Decrease effect:</h3>
             <div className="FilterList-value">
-                <input type="range" min="0" max="100" value={value} onChange={changeValue} />
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={value}
+                    onChange={changeValue}
+                />
                 <span>{value}%</span>
             </div>
         </div>

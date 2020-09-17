@@ -1,7 +1,12 @@
+@import "../../styles/common/variables";
+
 .App {
+    background-color: #ffffff;
+    color: $black;
     display: flex;
     flex-direction: column;
     max-width: 960px;
     margin: 0 auto;
     padding: 1em;
+    min-height: 100%;
 }

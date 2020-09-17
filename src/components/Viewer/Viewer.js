@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Viewer.scss";
 
 const Viewer = (props) => {
     const [image, setImage] = useState("");
@@ -14,7 +15,6 @@ const Viewer = (props) => {
         fetch(`/view/${id}`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data["url"]);
                 if (data["url"]) {
                     setImage(data["url"]);
                 } else {
@@ -25,12 +25,12 @@ const Viewer = (props) => {
 
     return (
         <div className="Viewer">
+            <a href="/">Click here to return home</a>
             {valid ? (
                 <img src={image} alt="" />
             ) : (
                 <h1>Image not found!</h1>
             )}
-            <a href="/">Click here to return home</a>
         </div>
     );
 };
