@@ -6,12 +6,14 @@ Able to share a link with friends to view the edited photo.
 `git clone https://github.com/dannyfan/photo-uploader.git`
 
 ## 1. Set environment variables
-Rename env.example to .env.
-Follow the instructions at https://firebase.google.com/docs/admin/setup to create your admin sdk json.
-Replace the variables from the json given. And "FIREBASE_STORAGE_BUCKET" replace the xxx with the name of your project made in firebase.
+- Rename env.example to .env.
 ```bash
 mv env.example .env
 ```
+- Follow the instructions at https://firebase.google.com/docs/admin/setup to create your admin sdk json.
+- Replace the variables from the json given. 
+- And "FIREBASE_STORAGE_BUCKET" replace the xxx with the name of your project made in firebase.
+
 
 ## 2. Install Dependencies
 Recommended to create a virtual environment to handle dependencies for Python.
