@@ -8,8 +8,9 @@ const UploadButton = (props) => {
         reader.onload = (event) => {
             props.setImage(event.target.result);
         };
-
         reader.readAsDataURL(event.target.files[0]);
+        props.setImageName(event.target.files[0].name);
+        props.setImageType(event.target.files[0].type);
     };
 
     return (

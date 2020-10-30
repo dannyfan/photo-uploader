@@ -12,14 +12,13 @@ const Viewer = (props) => {
     }, [props.id]);
 
     const getImage = (id) => {
-        fetch(`/view/${id}`)
+        fetch(props.url+`/view?id=${id}`)
             .then((response) => response.json())
             .then((data) => {
-                if (data["url"]) {
-                    setImage(data["url"]);
-                } else {
-                    setValid(false);
-                }
+                setImage(data['url']);
+                setValid(true);
+            }).catch((err) => {
+                setValid(false);
             });
     };
 

@@ -1,26 +1,25 @@
-import React from 'react';
-import './Canvas.scss';
+import React from "react";
+import "./Canvas.scss";
 
 const Canvas = (props) => {
-    const canvasRef = React.createRef();
-    const imageRef = React.createRef();
+  const imageDraw = () => {
+    props.setStartTransform(true);
+  };
 
-    const imageDraw = () => {
-        const canvas = canvasRef.current;
-        canvas.width = imageRef.current.width;
-        canvas.height = imageRef.current.height;
-        const ctx = canvas.getContext('2d');
-        ctx.filter = `${props.filter}(${props.filterValue})`;
-        ctx.drawImage(imageRef.current, 0, 0, canvas.width, canvas.height);
-        props.setFinalImage(canvas.toDataURL('image/png'));
-    }
-
-    return (
-        <div className='Canvas'>
-            <canvas ref={canvasRef}></canvas>
-            <img ref={imageRef} src={props.image} alt='' onLoad={imageDraw}/>
-        </div>
-    )
-}
+  return (
+    <div className="Canvas">
+      <img src={props.image} alt="" onLoad={imageDraw} />
+      {props.finalImage ? (
+        <img src={props.finalImage} alt="" />
+      ) : props.image ? (
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" />
+        </svg>
+      ) : (
+        <p>Upload an image first</p>
+      )}
+    </div>
+  );
+};
 
 export default Canvas;
